@@ -93,7 +93,7 @@ for subject_dir in "${parent_directory}"/*/; do
     echo "Segmenting with Atropos for $subject $session"
     antsAtroposN4.sh -d 3 \
       -a "T_BrainExtractionBrain.nii.gz" \
-      -c 4 \
+      -c 3 \
       -x "T_BrainExtractionMask.nii.gz" \
       -p "${priors_output}/priorWarped%d.nii.gz" \
       -o "T_"
