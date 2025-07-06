@@ -100,9 +100,9 @@ for subject_dir in "${parent_directory}"/*/; do
 
     # Compute tissue fractions
     echo "Calculating tissue fractions for $subject $session"
-    gm_fraction=$(fslstats "${priors_output}/priorWarped1.nii.gz" -k "$mask_file" -m)
-    wm_fraction=$(fslstats "${priors_output}/priorWarped2.nii.gz" -k "$mask_file" -m)
-    csf_fraction=$(fslstats "${priors_output}/priorWarped3.nii.gz" -k "$mask_file" -m)
+    gm_fraction=$(fslstats "${parent_directory}/T_SegmentationPosteriors1.nii.gz" -k "$mask_file" -m)
+    wm_fraction=$(fslstats "${parent_directory}/T_SegmentationPosteriors2.nii.gz" -k "$mask_file" -m)
+    csf_fraction=$(fslstats "${parent_directory}/T_SegmentationPosteriors3.nii.gz" -k "$mask_file" -m)
 
     echo -e "$subject,$gm_fraction,$wm_fraction,$csf_fraction" >> "$output_file"
 
